@@ -1,19 +1,18 @@
 import localFont from "next/font/local";
-import "./globals.css";
-import "./styles/style.sass"
-
+import "./styles/style.sass";
+import NavBar from "@/components/NavBar";
 
 const montrealMed = localFont({
   src: "./fonts/PPNeueMontreal-Medium.otf",
   variable: "--font-montreal-medium",
-  weight: "500"
+  weight: "500",
 });
 
 const montrealBook = localFont({
   src: "./fonts/PPNeueMontreal-Book.otf",
   variable: "--font-montreal-book",
-  weight: "400"
-})
+  weight: "400",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -23,9 +22,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${montrealMed.variable} ${montrealBook.variable}`}
-      >
+      <body className={`${montrealMed.variable} ${montrealBook.variable}`}>
+        <NavBar />
         {children}
       </body>
     </html>

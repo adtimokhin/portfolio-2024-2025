@@ -9,7 +9,7 @@ $phone-min: 320px
   // Used for actually important information
   @media (min-width: $desktop-min)
     font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
-    font-size: 24px
+    font-size: 16px
     font-style: normal
     font-weight: 500
     line-height: normal
@@ -43,7 +43,7 @@ sub.side-decoration
   @media (min-width: $desktop-min)
     font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
     font-feature-settings: 'subs' on
-    font-size: 24px
+    font-size: 16px
     font-style: normal
     font-weight: 500
     line-height: 80% // 19.2px
@@ -52,7 +52,7 @@ sub.side-decoration
   @media (min-width: $tablet-min) and (max-width: $desktop-min)
     font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
     font-feature-settings: 'subs' on
-    font-size: 24px
+    font-size: 16px
     font-style: normal
     font-weight: 500
     line-height: 80% // 19.2px
@@ -93,6 +93,35 @@ sub.side-decoration
   @media (min-width: $phone-min) and (max-width: $tablet-min)
     font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
     font-size: 16px
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    letter-spacing: 0px
+
+.section-title-text sup
+  // Used for the title of the section titles
+
+  /* DEV NOTE: to achieve the effect of the superscript present in the design
+                Use <sup/> html tag in combination with this class */
+  @media (min-width: $desktop-min)
+    font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
+    font-size: 14px
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    letter-spacing: 0px
+
+  @media (min-width: $tablet-min) and (max-width: $desktop-min)
+    font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
+    font-size: 14px
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    letter-spacing: 0px
+
+  @media (min-width: $phone-min) and (max-width: $tablet-min)
+    font-family: var(--font-montreal-medium, "PP Neue Montreal"), "Arial", "sans-serif"
+    font-size: 12px
     font-style: normal
     font-weight: 500
     line-height: normal
