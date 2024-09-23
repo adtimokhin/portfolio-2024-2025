@@ -1,0 +1,34 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+    
+// Global Theme Variables
+
+// Light Theme
+$background-light: #ffffff
+$text-light: #1C1C1C
+$light-gray-dimmed-light: #DFDFDF
+$dark-gray-dimmed-light: #242424
+
+// Dark Theme
+$background-dark: #181818
+$text-dark: #FFFFFF
+$light-gray-dimmed-dark: #3E3E3E
+$dark-gray-dimmed-dark: #C3C3C3
+
+
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+
+
+// Default (Light Theme)
+body
+    // background-color: $background-light
+    color: $text-light
+
+// Dark Theme
+body.dark-theme
+    background-color: $background-dark
+    color: $text-dark
