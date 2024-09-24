@@ -1,5 +1,6 @@
 // Styles
-import "@/app/styles/hero.sass";
+import "@/app/styles/landing/hero.sass";
+import "@/app/styles/landing/process.sass";
 
 // Icons
 import Random from "@/components/icons/Random";
@@ -14,13 +15,14 @@ import ProjectCard from "@/components/ProjectCard";
 import SmallInput from "@/components/input/SmallInput";
 import LargeInput from "@/components/input/LargeInput";
 import Button from "@/components/input/Button";
+import DropDownSection from "@/components/drop-down/DropDownSection";
 
 // Scripts
 
 export default function Home() {
   return (
     // Example how to include tailwind css class for a variable from layout file: font-[family-name:var(--font-montreal-medium)]
-    <div className="font-[family-name:var(--font-montreal-medium)]">
+    <div className="flex flex-col row-gap__sections-y">
       {/* Hero section */}
       <section className="w-full h-screen container-fit flex flex-col items-center justify-center">
         {/* TODO:Include approriate spaces between lines */}
@@ -123,10 +125,22 @@ export default function Home() {
         <SectionTitle side="↙У/©°∞" title="Creative Process" sup="[02]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="w-3/4 h-fit">
-            <ul>
-              <p>ddjj</p>
-              <p>ddjj</p>
-              <p>ddjj</p>
+            <ul className="process-list">
+              <li>
+                <DropDownSection title={"Setting   goals"} />
+              </li>
+              <li>
+                <DropDownSection title={"Analyzing"} />
+              </li>
+              <li>
+                <DropDownSection title={"Prototyping"} />
+              </li>
+              <li>
+                <DropDownSection title={"Designing"} />
+              </li>
+              <li>
+                <DropDownSection title={"Coding"} />
+              </li>
             </ul>
           </div>
         </div>

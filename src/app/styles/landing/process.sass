@@ -1,0 +1,24 @@
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+    
+ul.process-list
+    list-style: none
+    padding: 0
+    margin: 0
+
+    li
+        border-bottom: 2px solid #000 // Add horizontal line (bottom border)
+
+        @media (min-width: $desktop-min)
+            padding: 64px 0
+
+        @media (min-width: $tablet-min) and (max-width: $desktop-min)
+            padding: 48px 0
+
+        @media (min-width: $phone-min) and (max-width: $tablet-min)
+            padding: 40px 0
+
+        &:last-child
+            border-bottom: none
