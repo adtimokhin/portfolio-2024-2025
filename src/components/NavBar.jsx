@@ -18,7 +18,7 @@ import { changeTheme } from "@/app/scripts/theme-change";
  */
 const NavBar = () => {
   return (
-    <nav className="w-full border-b border-text_light dark:border-text_dark sticky top-0 flex flex-row justify-center align-middle items-center bg-background_light dark:bg-background_dark navbar__padding-y">
+    <nav className="w-full border-b border-text_light dark:border-text_dark fixed top-0 flex flex-row justify-center align-middle items-center bg-background_light dark:bg-background_dark navbar__padding-y z-[9999]">
       <div className="flex flex-row justify-between align-middle items-center container-fit">
         <a href="/">
           <Logo />
