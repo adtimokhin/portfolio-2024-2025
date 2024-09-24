@@ -11,6 +11,9 @@ import Side from "@/components/icons/Side";
 import Timer from "@/components/Timer";
 import SectionTitle from "@/components/SectionTitle";
 import ProjectCard from "@/components/ProjectCard";
+import SmallInput from "@/components/input/SmallInput";
+import LargeInput from "@/components/input/LargeInput";
+import Button from "@/components/input/Button";
 
 // Scripts
 
@@ -78,42 +81,98 @@ export default function Home() {
 
       {/* Projects Section */}
       <section className="w-full h-fit container-fit flex flex-col row-gap__title-content">
-        <SectionTitle side="№&■ж" title="Selected Projects" sup="[01]"/>
+        <SectionTitle side="№&■ж" title="Selected Projects" sup="[01]" />
         <div className="w-full h-fit flex flex-col section__projects__row-gap__line-spacing">
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
-            <ProjectCard title={"PACIFICA"} imgDest={"nowhere"} imgAlt={"no matter"}/>
-            <ProjectCard title={"Filipchik Studios"} imgDest={"nowhere"} imgAlt={"no matter"}/>
+            <ProjectCard
+              title={"PACIFICA"}
+              imgDest={"nowhere"}
+              imgAlt={"no matter"}
+            />
+            <ProjectCard
+              title={"Filipchik Studios"}
+              imgDest={"nowhere"}
+              imgAlt={"no matter"}
+            />
           </div>
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
-            <ProjectCard title={"Perestroyka Agency"} imgDest={"nowhere"} imgAlt={"no matter"}/>
+            <ProjectCard
+              title={"Perestroyka Agency"}
+              imgDest={"nowhere"}
+              imgAlt={"no matter"}
+            />
           </div>
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
-            <ProjectCard title={"Pierce Interiors"} imgDest={"nowhere"} imgAlt={"no matter"}/>
-            <ProjectCard title={"Harmony In Chaos"} imgDest={"nowhere"} imgAlt={"no matter"}/>
+            <ProjectCard
+              title={"Pierce Interiors"}
+              imgDest={"nowhere"}
+              imgAlt={"no matter"}
+            />
+            <ProjectCard
+              title={"Harmony In Chaos"}
+              imgDest={"nowhere"}
+              imgAlt={"no matter"}
+            />
           </div>
         </div>
       </section>
 
-      {/* Examples of the text */}
-      {/* <p className="body-text">
-        I DESIGN <sub className="side-decoration">№&■ж</sub>
-      </p>
-      <h3 className="section-title-text">
-        Text text<sup>[01]</sup>
-      </h3>
-      <p className="large-text">
-        (⁕⁕ For each step I will record a Loom video just for you, and at the
-        end of the development I will gift you Figma file with all the work in
-        it.  ⁕⁕)
-      </p>
-      <p className="absurdly-large-text">
-        (⁕⁕ For each step I will record a Loom video just for you, and at the
-        end of the development I will gift you Figma file with all the work in
-        it.  ⁕⁕)
-      </p> */}
+      {/* Projects Section */}
+      {/* TODO: Finish up this section later */}
+      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content">
+        <SectionTitle side="↙У/©°∞" title="Creative Process" sup="[02]" />
+        <div className="w-full h-fit flex flex-col justify-end items-end">
+          <div className="w-3/4 h-fit">
+            <ul>
+              <p>ddjj</p>
+              <p>ddjj</p>
+              <p>ddjj</p>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      {/* Example section title use */}
-      {/* <SectionTitle side="№&■ж" title="Selected Projects" sup="[01]"/> */}
+      {/* Extras Section */}
+      <section className="w-full h-screen container-fit flex flex-col justify-center items-center inverted ">
+        <p className="large-text w-full indent-[25%]">
+          (⁕⁕ For each step I will record a Loom video just for you, and at the
+          end of the development I will gift you Figma file with all the work in
+          it.  ⁕⁕)
+        </p>
+      </section>
+
+      {/* Contact Section */}
+      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content relative overflow-hidden">
+        <SectionTitle side="Ä▄@ŋ¬" title="Contact Form" sup="[03]" />
+        <div className="w-full h-fit flex flex-col justify-end items-end">
+          <div className="w-3/4 h-fit">
+            <form className="w-full h-fit flex flex-col justify-center section__projects__row-gap__form-button">
+              <div className="w-full h-fit flex flex-col section__projects__row-gap__input-spacing">
+                <SmallInput
+                  inputType={"text"}
+                  id={"name"}
+                  placeholder={"Name"}
+                />
+                <SmallInput
+                  inputType={"email"}
+                  id={"email"}
+                  placeholder={"Email"}
+                />
+                <LargeInput
+                  id={"description"}
+                  placeholder={"Project Description (500 symbols max)"}
+                />
+              </div>
+
+              <Button text="SEND" />
+            </form>
+          </div>
+        </div>
+
+        <span className="absurdly-large-text absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90 -">
+          ¶№§4€
+        </span>
+      </section>
     </div>
   );
 }

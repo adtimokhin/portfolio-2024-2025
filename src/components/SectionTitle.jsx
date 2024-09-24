@@ -11,7 +11,7 @@ import React from "react";
  */
 const SectionTitle = ({ side, title, sup }) => {
   return (
-    <div className="w-full border-b border-black flex flex-row relative h-[30px] items-center">
+    <div className="w-full border-b border-text_light dark:border-text_dark flex flex-row relative h-[30px] items-center">
       <sub className="side-decoration">{side}</sub>
       <h3 className="w-fit section-title-text absolute left-1/2 -translate-x-1/2">
         {title}

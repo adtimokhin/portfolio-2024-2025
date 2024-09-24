@@ -1,0 +1,112 @@
+// Light Theme
+$background-light: #ffffff
+$text-light: #1C1C1C
+$light-gray-dimmed-light: #DFDFDF
+$dark-gray-dimmed-light: #242424
+
+// Dark Theme
+$background-dark: #181818
+$text-dark: #FFFFFF
+$light-gray-dimmed-dark: #3E3E3E
+$dark-gray-dimmed-dark: #C3C3C3
+
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+
+
+input
+    background-color: transparent
+
+    &
+        @media (min-width: $desktop-min)
+            padding-left: 15px
+            padding-right: 15px
+            padding-top: 40px
+            padding-bottom: 40px
+
+        @media (min-width: $tablet-min) and (max-width: $desktop-min)
+            padding-left: 30px
+            padding-right: 30px
+            padding-top: 30px
+            padding-bottom: 30px
+
+        @media (min-width: $phone-min) and (max-width: $tablet-min)
+            padding-left: 20px
+            padding-right: 20px
+            padding-top: 20px
+            padding-bottom: 20px
+
+textarea
+    background-color: transparent
+
+    &
+        @media (min-width: $desktop-min)
+            padding-left: 15px
+            padding-right: 15px
+            padding-top: 20px
+            padding-bottom: 0px
+
+        @media (min-width: $tablet-min) and (max-width: $desktop-min)
+            padding-left: 30px
+            padding-right: 30px
+            padding-top: 30px
+            padding-bottom: 0px
+
+        @media (min-width: $phone-min) and (max-width: $tablet-min)
+            padding-left: 20px
+            padding-right: 20px
+            padding-top: 20px
+            padding-bottom: 0px
+
+
+body * 
+    input::placeholder
+        color: $light-gray-dimmed-light
+    
+    input:-ms-input-placeholder
+        color: $light-gray-dimmed-light
+    
+    input::-ms-input-placeholder
+        color: $light-gray-dimmed-light
+    
+    input::-webkit-input-placeholder
+        color: $light-gray-dimmed-light
+
+    textarea::placeholder
+        color: $light-gray-dimmed-light
+    
+    textarea:-ms-input-placeholder
+        color: $light-gray-dimmed-light
+    
+    textarea::-ms-input-placeholder
+        color: $light-gray-dimmed-light
+    
+    textarea::-webkit-input-placeholder
+        color: $light-gray-dimmed-light
+
+body.dark *
+    input::placeholder  
+        color: $dark-gray-dimmed-dark
+    
+    input:-ms-input-placeholder
+        color: $dark-gray-dimmed-dark
+    
+    input::-ms-input-placeholder
+        color: $dark-gray-dimmed-dark
+    
+    input::-webkit-input-placeholder
+        color: $dark-gray-dimmed-dark
+    
+    textarea::placeholder  
+        color: $dark-gray-dimmed-dark
+    
+    textarea:-ms-input-placeholder
+        color: $dark-gray-dimmed-dark
+    
+    textarea::-ms-input-placeholder
+        color: $dark-gray-dimmed-dark
+    
+    textarea::-webkit-input-placeholder
+        color: $dark-gray-dimmed-dark

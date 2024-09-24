@@ -32,6 +32,16 @@ body
         color: $background-light
         background: $text-light
 
+    * .inverted
+        background-color: $text-light
+        color: $background-light
+        ::moz-selection
+            color: $text-light
+            background: $background-light
+        ::selection
+            color: $text-light
+            background: $background-light
+
 // Dark Theme
 .dark
     background-color: $background-dark
@@ -42,3 +52,13 @@ body
     ::selection
         color: $background-dark
         background: $text-dark
+
+    * .inverted
+        background-color: $text-dark
+        color: $background-dark
+        ::moz-selection
+            color: $text-dark
+            background: $background-dark
+        ::selection
+            color: $text-dark
+            background: $background-dark
