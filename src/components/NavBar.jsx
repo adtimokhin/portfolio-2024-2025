@@ -1,34 +1,44 @@
+"use client";
 import React from "react";
+
+// Styles
+import "@/app/styles/components/navbar.sass";
+
+// Icons
 import Logo from "./icons/Logo";
 import Invert from "./icons/Invert";
+
+// Scripts
+import { changeTheme } from "@/app/scripts/theme-change";
 
 /**
  *
  * This navbar is common for all pages on this website
  *
- * @returns
  */
-
-// TODO: Add appropriate spacings for the menu
-// FIXME: Fix the fact that the border is not in fact black
-// FIXME: Add a padding from the top of the screen
 const NavBar = () => {
   return (
-    <nav className="w-full border-b border-black sticky top-0 flex flex-row justify-between align-middle items-center bg-white">
-      <Logo />
-      <Invert />
+    <nav className="w-full border-b border-text_light dark:border-text_dark sticky top-0 flex flex-row justify-center align-middle items-center bg-background_light dark:bg-background_dark navbar__padding-y">
+      <div className="flex flex-row justify-between align-middle items-center container-fit">
+        <a href="/">
+          <Logo />
+        </a>
+        <div onClick={changeTheme} className="hover:cursor-pointer">
+          <Invert />
+        </div>
 
-      {/* The actual links */}
-      <div className="w-fit flex flex-row gap-x-3 absolute left-1/2">
-        <a href="#" className="body-text">
-          projects
-        </a>
-        <a href="#" className="body-text">
-          process
-        </a>
-        <a href="#" className="body-text">
-          contact
-        </a>
+        {/* The actual links */}
+        <div className="w-fit absolute left-1/2 spaced-links">
+          <a href="#" className="body-text">
+            projects
+          </a>
+          <a href="#" className="body-text">
+            process
+          </a>
+          <a href="#" className="body-text">
+            contact
+          </a>
+        </div>
       </div>
     </nav>
   );

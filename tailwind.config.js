@@ -3,6 +3,7 @@
 // Colors and screen sizes are re-used from _global.sass
 
 module.exports = {
+  darkMode: 'selector',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",

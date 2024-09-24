@@ -1,0 +1,26 @@
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+
+// Content size variables
+$desktop-content: 1280px
+$tablet-content: 700px
+$phone-content: 300px
+
+.spaced-links
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    @media (min-width: $desktop-min)
+        column-gap: 40px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        column-gap: 20px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        column-gap: 20px
+
+.navbar__padding-y
+    padding-top: 20px
+    padding-bottom: 10px

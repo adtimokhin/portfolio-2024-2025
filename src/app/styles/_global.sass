@@ -25,8 +25,20 @@ $phone-min: 320px
 body
     background-color: $background-light
     color: $text-light
+    ::moz-selection
+        color: $background-light
+        background: $text-light
+    ::selection
+        color: $background-light
+        background: $text-light
 
 // Dark Theme
 .dark
     background-color: $background-dark
     color: $text-dark
+    ::moz-selection
+        color: $background-dark
+        background: $text-dark
+    ::selection
+        color: $background-dark
+        background: $text-dark

@@ -1,0 +1,22 @@
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+
+.container-fit
+    // This class is the general class to use for adding paddings to sections
+    // Every section must have this class on it
+    @media (min-width: $desktop-min)
+        width: 100vw
+        padding-left: 20px
+        padding-right: 20px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 100vw
+        padding-left: 10px
+        padding-right: 10px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 100vw
+        padding-left: 10px
+        padding-right: 10px
