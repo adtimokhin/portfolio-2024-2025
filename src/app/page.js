@@ -17,12 +17,11 @@ import LargeInput from "@/components/input/LargeInput";
 import Button from "@/components/input/Button";
 import DropDownSection from "@/components/drop-down/DropDownSection";
 
-// Scripts
 
 export default function Home() {
   return (
     // Example how to include tailwind css class for a variable from layout file: font-[family-name:var(--font-montreal-medium)]
-    <div className="flex flex-col row-gap__sections-y">
+    <main className="flex flex-col row-gap__sections-y">
       {/* Hero section */}
       <section className="w-full h-screen container-fit flex flex-col items-center justify-center">
         {/* TODO:Include approriate spaces between lines */}
@@ -43,14 +42,18 @@ export default function Home() {
         </div>
         {/* Bottom info */}
         <div className="w-full flex-1 flex flex-row justify-between items-center">
-          <Random />
+          <div id="test-animation3">
+            <Random />
+          </div>
           <div className="w-1/2 flex flex-row items-center justify-between">
-            <p className="body-text w-1/2">
+            <p className="body-text w-1/2" id="test-animation2">
               Hi. My name is Sasha, and I develop sites! This is my portfolio
               for you to check out my work. If you feel motivated to reach out
               about any work - feel free to fill in a form at the bottom
             </p>
-            <StartDate />
+            <div id="test-animation">
+              <StartDate />
+            </div>
           </div>
         </div>
       </section>
@@ -59,7 +62,7 @@ export default function Home() {
       <section className="w-screen h-screen container-fit relative">
         {/* Background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Globe />
+          <Globe classes={"fill-light_gray_dimmed_light"} />
         </div>
 
         {/* Content */}
@@ -187,6 +190,6 @@ export default function Home() {
           ¶№§4€
         </span>
       </section>
-    </div>
+    </main>
   );
 }

@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./styles/style.sass";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const montrealMed = localFont({
   src: "./fonts/PPNeueMontreal-Medium.otf",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${montrealMed.variable} ${montrealBook.variable}`}>
         <NavBar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

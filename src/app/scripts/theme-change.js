@@ -35,7 +35,6 @@ export function changeTheme() {
  * TODO: Update the function to work on svgs that also have light and dark gray colors
  */
 function updateSVGFillColor() {
-
   // Get all svg elements on the page
   const svgs = document.querySelectorAll("svg");
 
@@ -50,11 +49,28 @@ function updateSVGFillColor() {
     fillableElements.forEach((element) => {
       // Check if the current fill color is #1c1c1c
       const fillColor = window.getComputedStyle(element).fill;
+
       if (fillColor === "rgb(28, 28, 28)" || fillColor === "#1c1c1c") {
-        // Change the fill color to #ffffff
         element.style.fill = "#ffffff";
-      } else  {
+      } else if (
+        fillColor === "rgb(255, 255, 255)" ||
+        fillColor === "#ffffff"
+      ) {
         element.style.fill = "#1c1c1c";
+      } else if (
+        fillColor === "rgb(223, 223, 223)" ||
+        fillColor === "#dfdfdf"
+      ) {
+        element.style.fill = "#3e3e3e";
+      } else if (fillColor === "rgb(36, 36, 36)" || fillColor === "#242424") {
+        element.style.fill = "#c3c3c3";
+      } else if (
+        fillColor === "rgb(195, 195, 195)" ||
+        fillColor === "#c3c3c3"
+      ) {
+        element.style.fill = "#242424";
+      } else if (fillColor === "rgb(62, 62, 62)" || fillColor === "#3e3e3e") {
+        element.style.fill = "#dfdfdf";
       }
     });
   });
