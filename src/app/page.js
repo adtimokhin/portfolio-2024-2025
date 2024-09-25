@@ -19,6 +19,7 @@ import DropDownSection from "@/components/drop-down/DropDownSection";
 
 // Scripts
 import HeroLetters from "@/components/animation/HeroLetters";
+import "@/app/scripts/theme-check";
 
 export default function Home() {
   return (
@@ -196,9 +197,9 @@ export default function Home() {
       {/* Extras Section */}
       <section className="w-full h-screen container-fit flex flex-col justify-center items-center inverted ">
         <p className="large-text w-full indent-[25%]">
-          (⁕⁕ For each step I will record a Loom video just for you, and at the
-          end of the development I will gift you Figma file with all the work in
-          it.  ⁕⁕)
+          (⁕⁕&emsp;For each step I will record a Loom video just for you, and at
+          the end of the development I will gift you Figma file with all the
+          work in it.&emsp;⁕⁕)
         </p>
       </section>
 

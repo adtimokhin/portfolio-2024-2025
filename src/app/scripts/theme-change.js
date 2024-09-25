@@ -19,9 +19,11 @@ export function changeTheme() {
   if (body.classList.contains("dark")) {
     // Remove the 'dark' class if it is present
     body.classList.remove("dark");
+    localStorage.setItem('darkMode', 'disabled');
   } else {
     // Add the 'dark' class if it is not present
     body.classList.add("dark");
+    localStorage.setItem('darkMode', 'enabled');
   }
 
   updateSVGFillColor();
