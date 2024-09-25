@@ -16,7 +16,9 @@ import SmallInput from "@/components/input/SmallInput";
 import LargeInput from "@/components/input/LargeInput";
 import Button from "@/components/input/Button";
 import DropDownSection from "@/components/drop-down/DropDownSection";
-import BlackSquare from "@/components/animation/BlackSquare";
+
+// Scripts
+import HeroLetters from "@/components/animation/HeroLetters";
 
 export default function Home() {
   return (
@@ -25,28 +27,70 @@ export default function Home() {
       {/* Hero section */}
       <section className="w-full h-screen container-fit flex flex-col items-center justify-center">
         {/* TODO:Include approriate spaces between lines */}
+        <HeroLetters />
         <div className="w-full flex flex-col gap-y-[12px] flex-1 pt-[70px]">
           <div className="w-full flex flex-row justify-between items-center">
-            <h1 className="absurdly-large-text">I DESIGN</h1>
-            <h1 className="absurdly-large-text">AND</h1>
+            <h1 className="absurdly-large-text overflow-hidden">
+              <span className="hero-letter">I</span>
+              <span className="hero-letter ">&nbsp;</span>
+              <span className="hero-letter">D</span>
+              <span className="hero-letter ">E</span>
+              <span className="hero-letter ">S</span>
+              <span className="hero-letter">I</span>
+              <span className="hero-letter">G</span>
+              <span className="hero-letter ">N</span>
+            </h1>
+            <h1 className="absurdly-large-text overflow-hidden">
+              <span className="hero-letter">A</span>
+              <span className="hero-letter">N</span>
+              <span className="hero-letter">D</span>
+            </h1>
           </div>
           <div className="margin__line-two">
-            <h1 className="absurdly-large-text">DEVELOP</h1>
+            <h1 className="absurdly-large-text overflow-hidden">
+              <span className="hero-letter">D</span>
+              <span className="hero-letter">E</span>
+              <span className="hero-letter">V</span>
+              <span className="hero-letter">E</span>
+              <span className="hero-letter">L</span>
+              <span className="hero-letter">O</span>
+              <span className="hero-letter">P</span>
+            </h1>
           </div>
           <div className="margin__line-three">
-            <h1 className="absurdly-large-text">SITES FOR</h1>
+            <h1 className="absurdly-large-text overflow-hidden">
+              <span className="hero-letter">S</span>
+              <span className="hero-letter">I</span>
+              <span className="hero-letter">T</span>
+              <span className="hero-letter">E</span>
+              <span className="hero-letter">S</span>
+              <span className="hero-letter">&nbsp;</span>
+              <span className="hero-letter">F</span>
+              <span className="hero-letter">O</span>
+              <span className="hero-letter">R</span>
+            </h1>
           </div>
           <div className="w-full">
-            <h1 className="absurdly-large-text w-full text-right">STARTUPS</h1>
+            <h1 className="absurdly-large-text w-full text-right overflow-hidden">
+              <span className="hero-letter">S</span>
+              <span className="hero-letter">T</span>
+              <span className="hero-letter">A</span>
+              <span className="hero-letter">R</span>
+              <span className="hero-letter">T</span>
+              <span className="hero-letter">U</span>
+              <span className="hero-letter">P</span>
+              <span className="hero-letter">S</span>
+            </h1>
           </div>
         </div>
+
         {/* Bottom info */}
         <div className="w-full flex-1 flex flex-row justify-between items-center">
           <div id="test-animation3">
             <Random />
           </div>
           <div className="w-1/2 flex flex-row items-center justify-between">
-            <p className="body-text w-1/2" id="test-animation2">
+            <p className="body-text w-1/2" id="hero-body-text">
               Hi. My name is Sasha, and I develop sites! This is my portfolio
               for you to check out my work. If you feel motivated to reach out
               about any work - feel free to fill in a form at the bottom
@@ -73,14 +117,9 @@ export default function Home() {
               <div className="absolute top-0 left-0">
                 <Side />
               </div>
-              <BlackSquare rows={10} cols={80} color="#1c1c1c" time={1000} elementId="timer">
-                <h3
-                  className="absurdly-large-text absolute top-1/2 left-0 w-full text-center -translate-y-1/2"
-                  id="timer"
-                >
-                  <Timer />
-                </h3>
-              </BlackSquare>
+              <h3 className="absurdly-large-text absolute top-1/2 left-0 w-full text-center -translate-y-1/2">
+                <Timer />
+              </h3>
               <div className="absolute top-0 right-0">
                 <Side classes={"scale-x-[-1]"} />
               </div>

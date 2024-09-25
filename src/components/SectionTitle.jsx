@@ -11,6 +11,9 @@ import BlackSquare from "./animation/BlackSquare";
  * @returns
  */
 const SectionTitle = ({ side, title, sup }) => {
+
+  
+
   return (
     <div className="w-full border-b border-text_light dark:border-text_dark flex flex-row relative h-[30px] items-center">
       <BlackSquare

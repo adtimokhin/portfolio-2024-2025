@@ -108,13 +108,7 @@ export class BlackSquareAnimObject {
 
   animate() {
     function animationLoop() {
-      console.log("CHECKING");
-      
       if (!this.paused) {
-        console.log("NOT PAUSED");
-        console.log("this", this);
-        
-        
         this.delta = this.delta + 1;
         this.ctx.clearRect(0, 0, this.width, this.height);
         this.flickerRects();
@@ -167,6 +161,9 @@ export class BlackSquareAnimObject {
   }
 }
 
+// FIXME: The issue is as such: this.ctx is refusing to update the content if this.start is cladded outside of the object's code.
+
+// OLD VERSION THAT WORKED BUT IN A SINGLE INSTANCE
 // /**
 //  *
 //  * This animation works as follows: On top of the element that is being animated a 2d canvas will be added
