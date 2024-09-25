@@ -16,7 +16,7 @@ import SmallInput from "@/components/input/SmallInput";
 import LargeInput from "@/components/input/LargeInput";
 import Button from "@/components/input/Button";
 import DropDownSection from "@/components/drop-down/DropDownSection";
-
+import BlackSquare from "@/components/animation/BlackSquare";
 
 export default function Home() {
   return (
@@ -73,9 +73,14 @@ export default function Home() {
               <div className="absolute top-0 left-0">
                 <Side />
               </div>
-              <h3 className="absurdly-large-text absolute top-1/2 left-0 w-full text-center -translate-y-1/2">
-                <Timer />
-              </h3>
+              <BlackSquare rows={10} cols={80} color="#1c1c1c" time={1000} elementId="timer">
+                <h3
+                  className="absurdly-large-text absolute top-1/2 left-0 w-full text-center -translate-y-1/2"
+                  id="timer"
+                >
+                  <Timer />
+                </h3>
+              </BlackSquare>
               <div className="absolute top-0 right-0">
                 <Side classes={"scale-x-[-1]"} />
               </div>

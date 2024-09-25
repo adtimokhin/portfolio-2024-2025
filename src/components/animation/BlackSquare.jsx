@@ -1,6 +1,14 @@
 "use client";
 
-import { animateEnter, play } from "@/app/scripts/animations/black-squares";
+import {
+  animateEnter,
+  BlackSquareAnimObject,
+  play,
+} from "@/app/scripts/animations/black-squares";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import React, { useEffect } from "react";
 
 /**
@@ -24,18 +32,34 @@ import React, { useEffect } from "react";
  */
 const BlackSquare = (props) => {
   const { rows, cols, color, elementId, time } = props;
-  useEffect(() => {
-    // This code only runs on the client-side
-    const elementToAnim = document.getElementById(elementId);
-    if (elementToAnim) {
-      animateEnter(rows, cols, color, time, elementToAnim, elementId);
+  let elementToAnim;
 
-      // playing animation after a delay. Just testing
-      setTimeout(() => {
-        play();
-      }, 3000);
-    }
+  useEffect(() => {
+    elementToAnim = document.getElementById(elementId);
   }, [rows, cols, color, elementId]); // Depend on the props
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: elementToAnim,
+        start: "bottom bottom",
+        // markers: true,
+        onEnter: () => {
+          console.log("ABOUT TO START");
+          new BlackSquareAnimObject(
+            cols,
+            rows,
+            time,
+            color,
+            elementToAnim,
+            elementId
+          );
+        },
+      },
+    });
+  });
 
   return <>{props.children}</>;
 };
