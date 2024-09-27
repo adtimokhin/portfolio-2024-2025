@@ -1,6 +1,18 @@
 @tailwind base
 @tailwind components
 @tailwind utilities
+
+
+// Easing: https://easings.net/#easeOutExpo
+
+@mixin background-transition($color) 
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+  background-color: $color
+
+@mixin text-color-transition($color) 
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+  color: $color
+
     
 // Light Theme
 $background-light: #ffffff
@@ -23,6 +35,9 @@ $phone-min: 320px
 
 // Default (Light Theme)
 body
+    @include background-transition($color: $background-light)
+    @include background-transition($color: $text-light)
+
     background-color: $background-light
     color: $text-light
     ::moz-selection
@@ -33,6 +48,10 @@ body
         background: $text-light
 
     * .inverted
+
+        @include background-transition($color: $text-light)
+        @include background-transition($color: $background-light)
+
         background-color: $text-light
         color: $background-light
         ::moz-selection
@@ -44,6 +63,10 @@ body
 
 // Dark Theme
 .dark
+
+    @include background-transition($color: $background-dark)
+    @include background-transition($color: $text-dark)
+
     background-color: $background-dark
     color: $text-dark
     ::moz-selection
@@ -54,6 +77,8 @@ body
         background: $text-dark
 
     * .inverted
+        @include background-transition($color: $text-dark)
+        @include background-transition($color: $background-dark)
         background-color: $text-dark
         color: $background-dark
         ::moz-selection

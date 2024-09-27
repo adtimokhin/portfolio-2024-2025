@@ -5,7 +5,7 @@ import LargeLogoDecor from "./icons/LargeLogoDecor";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-screen bg-text_light dark:bg-text_dark relative overflow-hidden desktop:mt-[200px] tablet:mt-[150px] phone:mt-[150px]">
+    <footer className="w-full h-screen bg-text_light dark:bg-text_dark relative overflow-hidden desktop:mt-[200px] tablet:mt-[150px] phone:mt-[150px] transition-colors ease-out-expo duration-300">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <Globe classes={"fill-dark_gray_dimmed_light"} />
       </div>

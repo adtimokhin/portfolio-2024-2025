@@ -20,6 +20,7 @@ import DropDownSection from "@/components/drop-down/DropDownSection";
 // Scripts
 import HeroLetters from "@/components/animation/HeroLetters";
 import "@/app/scripts/theme-check";
+import DropDownCollection from "@/components/drop-down/DropDownCollection";
 
 export default function Home() {
   return (
@@ -130,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content">
+      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content" id="projects">
         <SectionTitle side="№&■ж" title="Selected Projects" sup="[01]" />
         <div className="w-full h-fit flex flex-col section__projects__row-gap__line-spacing">
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
@@ -138,11 +139,15 @@ export default function Home() {
               title={"PACIFICA"}
               imgDest={"nowhere"}
               imgAlt={"no matter"}
+              destination={"https://pacifica-kz-redesign.vercel.app/"}
             />
             <ProjectCard
               title={"Filipchik Studios"}
               imgDest={"nowhere"}
               imgAlt={"no matter"}
+              destination={
+                "https://filipchik-studio-website-redesign.vercel.app/"
+              }
             />
           </div>
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
@@ -150,6 +155,9 @@ export default function Home() {
               title={"Perestroyka Agency"}
               imgDest={"nowhere"}
               imgAlt={"no matter"}
+              destination={
+                "https://www.behance.net/gallery/194325431/Perestroyka-Agency-Website-Posters-Social-Media"
+              }
             />
           </div>
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
@@ -157,39 +165,24 @@ export default function Home() {
               title={"Pierce Interiors"}
               imgDest={"nowhere"}
               imgAlt={"no matter"}
+              destination={"https://pierce-interior.vercel.app/"}
             />
             <ProjectCard
               title={"Harmony In Chaos"}
               imgDest={"nowhere"}
               imgAlt={"no matter"}
+              destination={"https://harmony-in-chaos-website.vercel.app/"}
             />
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      {/* TODO: Finish up this section later */}
-      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content">
+      {/* Process Section */}
+      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content" id="process">
         <SectionTitle side="↙У/©°∞" title="Creative Process" sup="[02]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="w-3/4 h-fit">
-            <ul className="process-list">
-              <li>
-                <DropDownSection title={"Setting   goals"} />
-              </li>
-              <li>
-                <DropDownSection title={"Analyzing"} />
-              </li>
-              <li>
-                <DropDownSection title={"Prototyping"} />
-              </li>
-              <li>
-                <DropDownSection title={"Designing"} />
-              </li>
-              <li>
-                <DropDownSection title={"Coding"} />
-              </li>
-            </ul>
+            <DropDownCollection />
           </div>
         </div>
       </section>
@@ -204,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content relative overflow-hidden">
+      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content relative overflow-hidden" id="contact">
         <SectionTitle side="Ä▄@ŋ¬" title="Contact Form" sup="[03]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="w-3/4 h-fit">

@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${montrealMed.variable} ${montrealBook.variable}`}>
         <NavBar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

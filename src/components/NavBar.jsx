@@ -18,7 +18,7 @@ import { changeTheme } from "@/app/scripts/theme-change";
  */
 const NavBar = () => {
   return (
-    <nav className="w-full border-b border-text_light dark:border-text_dark fixed top-0 flex flex-row justify-center align-middle items-center bg-background_light dark:bg-background_dark navbar__padding-y z-[9999]">
+    <nav className="w-full border-b border-text_light dark:border-text_dark fixed top-0 flex flex-row justify-center align-middle items-center bg-background_light dark:bg-background_dark navbar__padding-y z-[9997] transition-colors ease-out-expo duration-300">
       <div className="flex flex-row justify-between align-middle items-center container-fit">
         <a href="/">
           <Logo />
@@ -29,13 +29,13 @@ const NavBar = () => {
 
         {/* The actual links */}
         <div className="w-fit absolute left-1/2 spaced-links">
-          <a href="#" className="body-text">
+          <a href="/#projects" className="body-text">
             projects
           </a>
-          <a href="#" className="body-text">
+          <a href="/#process" className="body-text">
             process
           </a>
-          <a href="#" className="body-text">
+          <a href="/#contact" className="body-text">
             contact
           </a>
         </div>
