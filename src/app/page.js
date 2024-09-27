@@ -21,6 +21,7 @@ import DropDownSection from "@/components/drop-down/DropDownSection";
 import HeroLetters from "@/components/animation/HeroLetters";
 import "@/app/scripts/theme-check";
 import DropDownCollection from "@/components/drop-down/DropDownCollection";
+import CanvasPluses from "@/components/canvas-based/CanvasPluses";
 
 export default function Home() {
   return (
@@ -128,10 +129,16 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* PLUSES BG */}
+        <CanvasPluses color={"DFDFDF"} />
       </section>
 
       {/* Projects Section */}
-      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content" id="projects">
+      <section
+        className="w-full h-fit container-fit flex flex-col row-gap__title-content"
+        id="projects"
+      >
         <SectionTitle side="№&■ж" title="Selected Projects" sup="[01]" />
         <div className="w-full h-fit flex flex-col section__projects__row-gap__line-spacing">
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
@@ -178,7 +185,10 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content" id="process">
+      <section
+        className="w-full h-fit container-fit flex flex-col row-gap__title-content"
+        id="process"
+      >
         <SectionTitle side="↙У/©°∞" title="Creative Process" sup="[02]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="w-3/4 h-fit">
@@ -197,7 +207,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="w-full h-fit container-fit flex flex-col row-gap__title-content relative overflow-hidden" id="contact">
+      <section
+        className="w-full h-fit container-fit flex flex-col row-gap__title-content relative overflow-hidden"
+        id="contact"
+      >
         <SectionTitle side="Ä▄@ŋ¬" title="Contact Form" sup="[03]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="w-3/4 h-fit">
