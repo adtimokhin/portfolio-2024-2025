@@ -7,7 +7,7 @@ import React, { useEffect, useRef } from "react";
 
 const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
   let span;
-  let container;
+  let text;
   let card;
   let cursor;
 
@@ -50,14 +50,18 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
     return cursors; // This returns a NodeList of elements
   }
 
-  function addCursor(container) {
+  const addCursor = contextSafe((container, event) => {
     console.log("Adding cursor");
 
     cursor = document.createElement("div");
     cursor.style.position = "absolute";
     cursor.classList.add("custom-cursor"); // Add your custom class
-    cursor.style.top = "0";
-    cursor.style.left = "0";
+
+    const x = event.clientY - cursorHeight + window.scrollY;
+    const y = event.clientX - cursorWidth;
+
+    cursor.style.top = `${x}px`;
+    cursor.style.left = `${y}px`;
     cursor.style.zIndex = "9999";
     cursor.style.width = `${2 * cursorWidth}px`; // Customize the size
     cursor.style.height = `${2 * cursorHeight}px`; // Customize the size
@@ -67,42 +71,48 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
     cursor.style.pointerEvents = "none"; // Prevent it from interfering with mouse events
 
     // Addpending text to the cursor
-    const text = document.createElement("p");
+    text = document.createElement("p");
     text.style.width = "400px"; // Does not really matter
     text.style.height = "400px"; // Does not really matter
-    text.style.color = "white";
+    text.style.color = "black"; // Until this is "white", it will be invisible
     text.style.mixBlendMode = "exclusion";
     text.classList.add("large-text");
     text.textContent = "OPEN ↗";
 
     cursor.appendChild(text);
     container.appendChild(cursor);
-  }
+
+    gsap.to(text, { color: "white" });
+  });
 
   const moveCursor = contextSafe((top, left) => {
     gsap.to(cursor, {
       top: `${top}px`,
       left: `${left}px`,
       duration: 0.2,
-      delay: 0.02
+      delay: 0.02,
     });
   });
 
-  const fadeCursor = contextSafe(()=>{
-    gsap.to(cursor, {opacity:0, duration:0.3})
-  })
+  const removeCursor = contextSafe(() => {
+    gsap.to(text, {
+      color: "black",
+      onComplete: () => {
+        cursor.remove();
+      },
+    });
+  });
 
   useEffect(() => {
     // hover-event listener
     span = document.getElementById(`project-text__${title}`);
-    container = document.getElementById(`project-text__container__${title}`);
     card = document.getElementById(`project-text__card__${title}`);
 
-    card.addEventListener("mouseenter", () => {
+    card.addEventListener("mouseenter", (event) => {
       const customCursors = findCustomCursors(card);
       if (customCursors.length === 0) {
         console.log("No custom cursors found.");
-        addCursor(card); // Cursor is set
+        addCursor(card, event); // Cursor is set
 
         // Adding the event listener
         card.addEventListener("mousemove", (e) => {
@@ -121,7 +131,8 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
       }
 
       customCursors.forEach((cursor) => {
-        cursor.remove(); // Remove each cursor from the DOM
+        // Before removing the cursor, play the fade animation for the text
+        removeCursor();
       });
 
       card.removeEventListener("mousemove", moveCursor);
@@ -137,7 +148,7 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
       ref={containerRef}
     >
       {/* TODO: Set the height correctly */}
-      <div className="w-full h-[470px] bg-transparent bg-lime-300">img</div>
+      <div className="w-full h-[470px] bg-transparent bg-red-300">img</div>
       <p
         className="body-text overflow-hidden"
         id={`project-text__container__${title}`}
