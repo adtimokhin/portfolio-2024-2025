@@ -22,6 +22,8 @@ import HeroLetters from "@/components/animation/HeroLetters";
 import "@/app/scripts/theme-check";
 import DropDownCollection from "@/components/drop-down/DropDownCollection";
 import CanvasPluses from "@/components/canvas-based/CanvasPluses";
+import DynamicTextWrapper from "@/components/DynamicTextWrapper";
+import HoverAnimation from "@/components/animation/HoverAnimation";
 
 export default function Home() {
   return (
@@ -34,72 +36,82 @@ export default function Home() {
         <div className="w-full flex flex-col gap-y-[12px] flex-1 pt-[70px]">
           <div className="w-full flex flex-row justify-between items-center">
             <h1 className="absurdly-large-text overflow-hidden">
-              <span className="hero-letter">I</span>
-              <span className="hero-letter ">&nbsp;</span>
-              <span className="hero-letter">D</span>
-              <span className="hero-letter ">E</span>
-              <span className="hero-letter ">S</span>
-              <span className="hero-letter">I</span>
-              <span className="hero-letter">G</span>
-              <span className="hero-letter ">N</span>
+              <span className="animatable-span hero-letter">I</span>
+              <span className="animatable-span hero-letter ">&nbsp;</span>
+              <span className="animatable-span hero-letter">D</span>
+              <span className="animatable-span hero-letter ">E</span>
+              <span className="animatable-span hero-letter ">S</span>
+              <span className="animatable-span hero-letter">I</span>
+              <span className="animatable-span hero-letter">G</span>
+              <span className="animatable-span hero-letter ">N</span>
             </h1>
             <h1 className="absurdly-large-text overflow-hidden">
-              <span className="hero-letter">A</span>
-              <span className="hero-letter">N</span>
-              <span className="hero-letter">D</span>
+              <span className="animatable-span hero-letter">A</span>
+              <span className="animatable-span hero-letter">N</span>
+              <span className="animatable-span hero-letter">D</span>
             </h1>
           </div>
           <div className="margin__line-two">
             <h1 className="absurdly-large-text overflow-hidden">
-              <span className="hero-letter">D</span>
-              <span className="hero-letter">E</span>
-              <span className="hero-letter">V</span>
-              <span className="hero-letter">E</span>
-              <span className="hero-letter">L</span>
-              <span className="hero-letter">O</span>
-              <span className="hero-letter">P</span>
+              <span className="animatable-span hero-letter">D</span>
+              <span className="animatable-span hero-letter">E</span>
+              <span className="animatable-span hero-letter">V</span>
+              <span className="animatable-span hero-letter">E</span>
+              <span className="animatable-span hero-letter">L</span>
+              <span className="animatable-span hero-letter">O</span>
+              <span className="animatable-span hero-letter">P</span>
             </h1>
           </div>
           <div className="margin__line-three">
             <h1 className="absurdly-large-text overflow-hidden">
-              <span className="hero-letter">S</span>
-              <span className="hero-letter">I</span>
-              <span className="hero-letter">T</span>
-              <span className="hero-letter">E</span>
-              <span className="hero-letter">S</span>
-              <span className="hero-letter">&nbsp;</span>
-              <span className="hero-letter">F</span>
-              <span className="hero-letter">O</span>
-              <span className="hero-letter">R</span>
+              <span className="animatable-span hero-letter">S</span>
+              <span className="animatable-span hero-letter">I</span>
+              <span className="animatable-span hero-letter">T</span>
+              <span className="animatable-span hero-letter">E</span>
+              <span className="animatable-span hero-letter">S</span>
+              <span className="animatable-span hero-letter">&nbsp;</span>
+              <span className="animatable-span hero-letter">F</span>
+              <span className="animatable-span hero-letter">O</span>
+              <span className="animatable-span hero-letter">R</span>
             </h1>
           </div>
           <div className="w-full">
             <h1 className="absurdly-large-text w-full text-right overflow-hidden">
-              <span className="hero-letter">S</span>
-              <span className="hero-letter">T</span>
-              <span className="hero-letter">A</span>
-              <span className="hero-letter">R</span>
-              <span className="hero-letter">T</span>
-              <span className="hero-letter">U</span>
-              <span className="hero-letter">P</span>
-              <span className="hero-letter">S</span>
+              <span className="animatable-span hero-letter">S</span>
+              <span className="animatable-span hero-letter">T</span>
+              <span className="animatable-span hero-letter">A</span>
+              <span className="animatable-span hero-letter">R</span>
+              <span className="animatable-span hero-letter">T</span>
+              <span className="animatable-span hero-letter">U</span>
+              <span className="animatable-span hero-letter">P</span>
+              <span className="animatable-span hero-letter">S</span>
             </h1>
           </div>
         </div>
 
         {/* Bottom info */}
         <div className="w-full flex-1 flex flex-row justify-between items-center">
-          <div id="test-animation3">
-            <Random />
+          <div className="bg-text_light dark:bg-text_dark icon-cover">
+            <Random
+              classes={
+                "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
+              }
+            />
           </div>
           <div className="w-1/2 flex flex-row items-center justify-between">
-            <p className="body-text w-1/2" id="hero-body-text">
-              Hi. My name is Sasha, and I develop sites! This is my portfolio
-              for you to check out my work. If you feel motivated to reach out
-              about any work - feel free to fill in a form at the bottom
-            </p>
-            <div id="test-animation">
-              <StartDate />
+            <div className="body-text w-1/2 hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300">
+              <DynamicTextWrapper
+                text={
+                  "Hi. My name is Sasha, and I develop sites! This is my portfolio for you to check out my work. If you feel motivated to reach out about any work - feel free to fill in a form at the bottom"
+                }
+              />
+            </div>
+            <div className="bg-text_light dark:bg-text_dark icon-cover ">
+              <StartDate
+                classes={
+                  "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
+                }
+              />
             </div>
           </div>
         </div>
@@ -121,7 +133,9 @@ export default function Home() {
                 <Side />
               </div>
               <h3 className="absurdly-large-text absolute top-1/2 left-0 w-full text-center -translate-y-1/2">
-                <Timer />
+                <HoverAnimation>
+                  <Timer />
+                </HoverAnimation>
               </h3>
               <div className="absolute top-0 right-0">
                 <Side classes={"scale-x-[-1]"} />

@@ -5,6 +5,7 @@ import BlackSquare from "./animation/BlackSquare";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import HoverAnimation from "./animation/HoverAnimation";
 
 /**
  *
@@ -50,10 +51,12 @@ const SectionTitle = ({ side, title, sup }) => {
         <sub className="side-decoration">{side}</sub>
       </p>
       <h3 className="w-fit section-title-text absolute left-1/2 -translate-x-1/2 overflow-hidden">
+      <HoverAnimation>
         <span id={`title-${sup}__main`} className="inline-block relative">
           {title}
           <sup>{sup}</sup>
         </span>
+        </HoverAnimation>
       </h3>
     </div>
   );

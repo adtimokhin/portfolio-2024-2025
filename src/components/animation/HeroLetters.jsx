@@ -17,7 +17,38 @@ const HeroLetters = () => {
         ease: "power1.inOut",
       });
 
-      tl.from("#hero-body-text", { opacity: 0,  ease: "power2.inOut" });
+      tl.to(".icon-cover", {
+        backgroundColor: "transparent",
+        ease: "power1.inOut",
+        stagger: 0.05,
+      });
+
+      letters.forEach((letter) => {
+        // FIXME: Current implementation will fail if the user will toggle modes
+
+        letter.addEventListener("mouseenter", () => {
+          const darkMode = localStorage.getItem("darkMode");
+          let bgColor = "#1c1c1c";
+          if (darkMode === "enabled") {
+            bgColor = "#FFFFFF";
+          }
+
+          gsap.to(letter, {
+            backgroundColor: bgColor,
+            ease: "power1.inOut",
+            duration: 0.3,
+          });
+        });
+
+        letter.addEventListener("mouseleave", () => {
+          gsap.to(letter, {
+            backgroundColor: "transparent",
+            delay: 1,
+            ease: "power1.inOut",
+            duration: 0.3,
+          });
+        });
+      });
     });
 
     // cleanup

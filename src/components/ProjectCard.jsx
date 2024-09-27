@@ -148,7 +148,9 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
       ref={containerRef}
     >
       {/* TODO: Set the height correctly */}
-      <div className="w-full h-[470px] bg-transparent bg-red-300">img</div>
+      <div className="w-full h-[470px]">
+        img
+      </div>
       <p
         className="body-text overflow-hidden"
         id={`project-text__container__${title}`}

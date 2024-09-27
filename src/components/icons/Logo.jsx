@@ -7,7 +7,7 @@ import React from "react";
  *
  * @returns
  */
-const Logo = () => {
+const Logo = ({ classes }) => {
   return (
     <svg
       width="208"
@@ -15,6 +15,7 @@ const Logo = () => {
       viewBox="0 0 208 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={classes}
     >
       <path
         d="M6.3 24.64H3.892C1.792 21.812 0 17.416 0 12.348C0 7.112 1.792 2.828 3.892 0H6.3C4.48 3.388 3.052 7.168 3.052 12.348C3.052 17.416 4.48 21.252 6.3 24.64Z"
