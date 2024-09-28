@@ -99,7 +99,7 @@ export default function Home() {
             />
           </div>
           <div className="w-1/2 flex flex-row items-center justify-between">
-            <div className="body-text w-1/2 hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300">
+            <div className="body-text w-1/2 ">
               <DynamicTextWrapper
                 text={
                   "Hi. My name is Sasha, and I develop sites! This is my portfolio for you to check out my work. If you feel motivated to reach out about any work - feel free to fill in a form at the bottom"

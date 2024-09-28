@@ -3,7 +3,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import test from "@/app/images/Test.png";
 
 const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
   let span;
@@ -14,9 +16,11 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
   let cursorWidth = 10;
   let cursorHeight = 10;
 
-  const containerRef = useRef();
+  const containerRef = useRef(null);
+  const gsapRef = useRef(null);
 
   // Animation when element gets into the view
+  // FIXME: Animation of the text does not happen on the scroll.
   useGSAP(
     () => {
       let ctx = gsap.context(() => {
@@ -38,7 +42,7 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
       // cleanup
       return () => ctx.revert(); // <-- CLEANUP!
     },
-    { scope: containerRef }
+    { scope: gsapRef }
   );
 
   const { contextSafe } = useGSAP({ scope: containerRef }); // we can pass in a
@@ -103,6 +107,10 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
     });
   });
 
+  const animateImage = contextSafe(() => {
+    gsap.from("img", { opacity: 0, duration: 0.3, ease: "power1.inOut" });
+  });
+
   useEffect(() => {
     // hover-event listener
     span = document.getElementById(`project-text__${title}`);
@@ -140,26 +148,40 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
   }, []);
 
   return (
-    <a
+    <div
+      ref={gsapRef}
       className="flex flex-1 flex-col section__projects__row-gap__title-image"
-      id={`project-text__card__${title}`}
-      href={destination}
-      target="_blank"
-      ref={containerRef}
     >
-      {/* TODO: Set the height correctly */}
-      <div className="w-full h-[470px]">
-        img
-      </div>
-      <p
-        className="body-text overflow-hidden"
-        id={`project-text__container__${title}`}
+      <a
+        className=""
+        id={`project-text__card__${title}`}
+        href={destination}
+        target="_blank"
+        ref={containerRef}
       >
-        <span className="inline-block relative" id={`project-text__${title}`}>
-          {title}
-        </span>
-      </p>
-    </a>
+        {/* TODO: Set the height correctly */}
+        <div className="w-full h-[470px] inverted flex flex-col items-center justify-center relative">
+          <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 body-text w-fit text-center">
+            [IMG LOADING...]
+          </p>
+          <Image
+            height={470}
+            src={test}
+            style={{ maxHeight: "100%", width: "100%" }}
+            className="z-10"
+            onLoadingComplete={animateImage}
+          />
+        </div>
+        <p
+          className="body-text overflow-hidden"
+          id={`project-text__container__${title}`}
+        >
+          <span className="inline-block relative" id={`project-text__${title}`}>
+            {title}
+          </span>
+        </p>
+      </a>
+    </div>
   );
 };
 

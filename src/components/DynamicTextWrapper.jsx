@@ -28,6 +28,32 @@ const DynamicTextWrapper = ({ text }) => {
       stagger: 0.2,
       ease: "power1.inOut",
       delay: 1.65,
+      onComplete: () => {
+        lines.forEach((line) => {
+          line.addEventListener("mouseenter", () => {
+            const darkMode = localStorage.getItem("darkMode");
+            let bgColor = "#1c1c1c";
+            if (darkMode === "enabled") {
+              bgColor = "#FFFFFF";
+            }
+
+            gsap.to(line, {
+              backgroundColor: bgColor,
+              ease: "power1.inOut",
+              duration: 0.3,
+            });
+          });
+
+          line.addEventListener("mouseleave", () => {
+            gsap.to(line, {
+              backgroundColor: "transparent",
+              delay: 1,
+              ease: "power1.inOut",
+              duration: 0.3,
+            });
+          });
+        });
+      },
     });
   });
 
