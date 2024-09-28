@@ -115,7 +115,12 @@ const DynamicTextWrapper = ({ text }) => {
 
   return (
     <div ref={gsapRef}>
-      <p ref={textRef}>{text}</p>
+      <p
+        ref={textRef}
+        className="desktop:text-start tablet:text-start phone:text-center"
+      >
+        {text}
+      </p>
     </div>
   );
 };

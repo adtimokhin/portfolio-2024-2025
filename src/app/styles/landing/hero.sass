@@ -1,10 +1,30 @@
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+
 .margin__line-two
     // Margins for line #2 (text: DEVELOP)
-    margin-left: 13vw
+    @media (min-width: $desktop-min)
+        margin-left: 13vw
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        text-align: center
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        text-align: center
+    
 
 .margin__line-three
     // Margins for line #3 (text: SITES FOR)
-    margin-left: 25vw
+    @media (min-width: $desktop-min)
+        margin-left: 25vw
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        text-align: start
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        text-align: start
 
 .animatable-span
   display: inline-block

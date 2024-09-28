@@ -30,10 +30,10 @@ export default function Home() {
     // Example how to include tailwind css class for a variable from layout file: font-[family-name:var(--font-montreal-medium)]
     <main className="flex flex-col row-gap__sections-y">
       {/* Hero section */}
-      <section className="w-full h-screen container-fit flex flex-col items-center justify-center">
+      <section className="w-full h-screen container-fit flex flex-col items-center desktop:justify-center tablet:justify-around phone:justify-between pt-[70px]">
         {/* TODO:Include approriate spaces between lines */}
         <HeroLetters />
-        <div className="w-full flex flex-col gap-y-[12px] flex-1 pt-[70px]">
+        <div className="w-full flex flex-col hero-lines__row-gap desktop:flex-1">
           <div className="w-full flex flex-row justify-between items-center">
             <h1 className="absurdly-large-text overflow-hidden">
               <span className="animatable-span hero-letter">I</span>
@@ -62,6 +62,16 @@ export default function Home() {
               <span className="animatable-span hero-letter">P</span>
             </h1>
           </div>
+
+          {/* ICON FOR SMALLER SCREENS */}
+          <div className="bg-text_light dark:bg-text_dark icon-cover desktop:hidden tablet:flex phone:flex flex-col justify-center items-center">
+            <StartDate
+              classes={
+                "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
+              }
+            />
+          </div>
+
           <div className="margin__line-three">
             <h1 className="absurdly-large-text overflow-hidden">
               <span className="animatable-span hero-letter">S</span>
@@ -90,23 +100,23 @@ export default function Home() {
         </div>
 
         {/* Bottom info */}
-        <div className="w-full flex-1 flex flex-row justify-between items-center">
-          <div className="bg-text_light dark:bg-text_dark icon-cover">
+        <div className="w-full desktop:flex-1 tablet:h-fit phone:h-fit flex desktop:flex-row tablet:flex-row phone:flex-col justify-between items-center gap-y-8">
+          <div className="bg-text_light dark:bg-text_dark icon-cover desktop:order-first tablet:order-last phone:order-last">
             <Random
               classes={
                 "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
               }
             />
           </div>
-          <div className="w-1/2 flex flex-row items-center justify-between">
-            <div className="body-text w-1/2 ">
+          <div className="desktop:w-1/2 tablet:w-1/2 phone:w-full flex flex-row items-center justify-between">
+            <div className="body-text desktop:w-1/2">
               <DynamicTextWrapper
                 text={
                   "Hi. My name is Sasha, and I develop sites! This is my portfolio for you to check out my work. If you feel motivated to reach out about any work - feel free to fill in a form at the bottom"
                 }
               />
             </div>
-            <div className="bg-text_light dark:bg-text_dark icon-cover ">
+            <div className="bg-text_light dark:bg-text_dark icon-cover desktop:flex tablet:hidden phone:hidden">
               <StartDate
                 classes={
                   "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
@@ -155,7 +165,7 @@ export default function Home() {
       >
         <SectionTitle side="№&■ж" title="Selected Projects" sup="[01]" />
         <div className="w-full h-fit flex flex-col section__projects__row-gap__line-spacing">
-          <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
+          <div className="w-full flex desktop:flex-row tablet:flex-col phone:flex-col section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
               title={"PACIFICA"}
               imgDest={"nowhere"}
@@ -181,7 +191,7 @@ export default function Home() {
               }
             />
           </div>
-          <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
+          <div className="w-full flex desktop:flex-row tablet:flex-col phone:flex-col section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
               title={"Pierce Interiors"}
               imgDest={"nowhere"}
@@ -205,14 +215,14 @@ export default function Home() {
       >
         <SectionTitle side="↙У/©°∞" title="Creative Process" sup="[02]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
-          <div className="w-3/4 h-fit">
+          <div className="desktop:w-3/4 tablet:w-full phone:w-full h-fit">
             <DropDownCollection />
           </div>
         </div>
       </section>
 
       {/* Extras Section */}
-      <section className="w-full h-screen container-fit flex flex-col justify-center items-center inverted ">
+      <section className="w-full desktop:h-screen tablet:h-[50vh] phone:h-[50vh] container-fit flex flex-col justify-center items-center inverted ">
         <p className="large-text w-full indent-[25%]">
           (⁕⁕&emsp;For each step I will record a Loom video just for you, and at
           the end of the development I will gift you Figma file with all the
@@ -227,7 +237,7 @@ export default function Home() {
       >
         <SectionTitle side="Ä▄@ŋ¬" title="Contact Form" sup="[03]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
-          <div className="w-3/4 h-fit">
+          <div className="desktop:w-3/4 tablet:w-full phone:w-full h-fit">
             <form className="w-full h-fit flex flex-col justify-center section__projects__row-gap__form-button">
               <div className="w-full h-fit flex flex-col section__projects__row-gap__input-spacing">
                 <SmallInput
@@ -251,7 +261,7 @@ export default function Home() {
           </div>
         </div>
 
-        <span className="absurdly-large-text absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90 -">
+        <span className="absurdly-large-text absolute desktop:flex tablet:hidden phone:hidden top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90 -">
           ¶№§4€
         </span>
       </section>

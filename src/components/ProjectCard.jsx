@@ -153,7 +153,7 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
       className="flex flex-1 flex-col section__projects__row-gap__title-image"
     >
       <a
-        className=""
+        className="flex flex-1 flex-col section__projects__row-gap__title-image"
         id={`project-text__card__${title}`}
         href={destination}
         target="_blank"
