@@ -1,13 +1,12 @@
 import React from "react";
 
-const LargeLogoDecor = () => {
+const LargeLogoDecor = ({classes}) => {
   return (
     <svg
-      width="491"
-      height="264"
       viewBox="0 0 491 264"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={`${classes} large-logo-decor__icon`}
     >
       <path
         d="M407.762 164.743L357.095 162.036L393.072 200.719L378.082 215.11L339.398 179.433L342.105 230.4L321.419 230.1L324.126 179.433L285.443 215.41L271.052 200.719L306.729 162.036L255.762 164.743V144.057L306.729 146.764L270.752 107.781L285.443 93.39L324.126 129.366L321.419 78.3999H342.105L339.398 129.366L378.381 93.39L393.072 107.781L357.095 146.764L407.762 144.057V164.743Z"

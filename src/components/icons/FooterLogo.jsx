@@ -1,13 +1,12 @@
 import React from "react";
 
-const FooterLogo = () => {
+const FooterLogo = ({classes}) => {
   return (
     <svg
-      width="1127"
-      height="459"
       viewBox="0 0 1127 459"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={`${classes} footer-logo__icon`}
     >
       <path
         d="M34.8 218.7H0L79.8 4.2H115.5L195.9 218.7H159.9L142.2 167.1H52.5L34.8 218.7ZM97.2 34.8L62.4 139.2H132.9L97.8 34.8H97.2Z"

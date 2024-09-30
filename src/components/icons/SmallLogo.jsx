@@ -1,13 +1,12 @@
 import React from "react";
 
-const SmallLogo = () => {
+const SmallLogo = ({classes}) => {
   return (
     <svg
-      width="33"
-      height="18"
       viewBox="0 0 33 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={`${classes} small-logo__icon`}
     >
       <path
         d="M4.56377 18H2.81939C1.29814 15.9341 0 12.7227 0 9.02045C0 5.19545 1.29814 2.06591 2.81939 0H4.56377C3.24535 2.475 2.21089 5.23636 2.21089 9.02045C2.21089 12.7227 3.24535 15.525 4.56377 18Z"

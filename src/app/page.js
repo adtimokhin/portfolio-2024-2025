@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Time Section */}
-      <section className="w-screen h-screen container-fit relative">
+      <section className="w-screen desktop:h-screen tablet:h-screen phone:h-[80vh] container-fit relative">
         {/* Background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Globe classes={"fill-light_gray_dimmed_light"} />
@@ -138,7 +138,7 @@ export default function Home() {
         <div className="w-full h-fit absolute top-1/2 left-0 -translate-y-1/2">
           <div className="w-full h-fit flex flex-col justify-center items-center section__time__row-gap__title-timer">
             <h3 className="large-title-text">Currently I’m in: Chicago</h3>
-            <div className="w-full h-[420px] relative">
+            <div className="w-full desktop:h-[420px] tablet:h-[220px] phone:h-[72px] relative">
               <div className="absolute top-0 left-0">
                 <Side />
               </div>

@@ -1,5 +1,22 @@
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+    
 button
-    padding-left:200px
-    padding-right: 200px
-    padding-top: 40px
-    padding-bottom:40px
+
+    @media (min-width: $desktop-min)
+        padding-left:200px
+        padding-right: 200px
+        padding-top: 40px
+        padding-bottom:40px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 100%
+        padding-top: 40px
+        padding-bottom:40px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 100%
+        padding-top: 40px
+        padding-bottom:40px

@@ -6,11 +6,9 @@ const DropDownCollection = () => {
   // FIXME: Add some plesant animation for adding text to a section. It looks a bit twitchy
   const [selectedSection, setSelectedSection] = useState(-1);
 
-  
-
   // TODO: Make this data more nice, I guess.
   const textData = [
-    <div className="w-1/2 body-text">
+    <div className="desktop:w-1/2 tablet:w-full phone:w-full body-text">
       <p>1.1. We will get to know each other</p>
       <p>
         1.2. We will discuss your business and what goals must a site accomplish
@@ -18,7 +16,7 @@ const DropDownCollection = () => {
       <p>1.3. We will create an initial project plan and timeline</p>
     </div>,
 
-    <div className="w-1/2 body-text">
+    <div className="desktop:w-1/2 tablet:w-full phone:w-full body-text">
       <p>2.1 I will analyze the competition</p>
       <p>2.2. I will create profiles of prospect users of the site</p>
       <p>
@@ -28,14 +26,14 @@ const DropDownCollection = () => {
       <p>2.4. I will plan out the content for the website</p>
     </div>,
 
-    <div className="w-1/2 body-text">
+    <div className="desktop:w-1/2 tablet:w-full phone:w-full body-text">
       <p>
         3.1 I will create multiple possible mockups of the website pages for us
         to choose for the project
       </p>
     </div>,
 
-    <div className="w-1/2 body-text">
+    <div className="desktop:w-1/2 tablet:w-full phone:w-full body-text">
       <p>
         4.1 We will discuss what design ideas and reference materials you might
         have
@@ -44,7 +42,7 @@ const DropDownCollection = () => {
       <p>4.3. I will apply the design concept to all pages of the site</p>
     </div>,
 
-    <div className="w-1/2 body-text">
+    <div className="desktop:w-1/2 tablet:w-full phone:w-full body-text">
       <p>
         5.1 I will code the website, making sure it is adaptive to different
         screen sizes

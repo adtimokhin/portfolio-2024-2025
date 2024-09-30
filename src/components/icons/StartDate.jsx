@@ -3,12 +3,10 @@ import React from "react";
 const StartDate = ({classes}) => {
   return (
     <svg
-      width="291"
-      height="108"
       viewBox="0 0 291 108"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={classes}
+      className={`${classes} start-date__icon`}
     >
       <path
         d="M57 56.858L43 56.11L52.9408 66.7988L48.7988 70.7751L38.11 60.9172L38.858 75L33.142 74.9172L33.89 60.9172L23.2012 70.858L19.2249 66.7988L29.0828 56.11L15 56.858V51.142L29.0828 51.89L19.142 41.1183L23.2012 37.142L33.89 47.0828L33.142 33H38.858L38.11 47.0828L48.8817 37.142L52.9408 41.1183L43 51.89L57 51.142V56.858Z"

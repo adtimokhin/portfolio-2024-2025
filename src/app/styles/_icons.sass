@@ -1,0 +1,168 @@
+// Here we have dynamic icon sizes depending on the screen size
+
+// Screen size variables
+$desktop-min: 1280px
+$tablet-min: 768px
+$phone-min: 320px
+
+
+svg.large-logo__icon
+    @media (min-width: $desktop-min)
+        width: 208px
+        height:25px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 150px
+        height: 19px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 150px
+        height: 19px
+
+svg.invert__icon
+    @media (min-width: $desktop-min)
+        width: 15px
+        height:15px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 15px
+        height:15px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 8px
+        height: 8px
+
+
+svg.small-logo__icon
+    @media (min-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 15px
+        height:15px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 15px
+        height:15px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 33px
+        height: 18px
+
+
+
+svg.start-date__icon
+    @media (min-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 291px
+        height:108px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 408px
+        height:183px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 238px
+        height: 107px
+
+
+svg.random__icon
+    @media (min-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 172px
+        height:76px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 87px
+        height:38px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 52px
+        height: 24px
+
+svg.side__icon
+    @media (min-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 223px
+        height:420px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        // do not use this icon for large screen
+        width: 117px
+        height:220px
+
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 38px
+        height: 72px
+
+svg.globe__icon
+    @media (min-width: $desktop-min)
+        width: 723px
+        height:723px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 517px
+        height: 517px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 237px
+        height: 237px
+
+
+svg.large-logo-decor__icon
+    @media (min-width: $desktop-min)
+        width: 491px
+        height:264px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 491px
+        height:264px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 263px
+        height: 142px
+
+
+svg.footer-logo__icon
+    @media (min-width: $desktop-min)
+        width: 1127px
+        height: 459px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 700px
+        height:286px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 300px
+        height: 122px
+
+
+//  all number icons have this class
+svg.number__icon
+    @media (min-width: $desktop-min)
+        width: 38px
+        height: 38px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 21px
+        height:21px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 19px
+        height: 19px
+
+
+svg.action__icon
+    @media (min-width: $desktop-min)
+        width: 34px
+        height: 61px
+
+    @media (min-width: $tablet-min) and (max-width: $desktop-min)
+        width: 19px
+        height: 34px
+
+    @media (min-width: $phone-min) and (max-width: $tablet-min)
+        width: 17px
+        height: 34px
