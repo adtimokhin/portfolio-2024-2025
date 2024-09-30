@@ -107,9 +107,11 @@ const DropDownTitle = ({
       <div className="desktop:w-[55px] tablet:w-[38px] phone:w-[36px] desktop:h-[55px] tablet:h-[38px] phone:h-[36px] flex flex-col justify-center items-center">
         <div className="number-icon -rotate-45">{icon}</div>
       </div>
+
+      
       <h4 className="large-title-text">{title}</h4>
 
-      <div className="desktop:w-[34px] tablet:w-[19px] phone:w-[17px] deskotp:h-[61px] tablet:h-[34px] phone:h-[34px] relative overflow-hidden">
+      <div className="desktop:w-[34px] tablet:w-[19px] phone:w-[17px] h-[61px] relative overflow-hidden">
         <div className="absolute right-0 top-0 deskotp:h-[61px] tablet:h-[34px] phone:h-[34px] desktop:w-[136px] tablet:w-[76px] phone:w-[68px] icon-holder">
           <div className="w-full flex flex-row gap-0">
             <Nothing />
