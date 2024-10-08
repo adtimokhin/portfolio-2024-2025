@@ -222,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Extras Section */}
-      <section className="w-full desktop:h-screen tablet:h-[50vh] phone:h-[50vh] container-fit flex flex-col justify-center items-center inverted ">
+      <section className="w-full desktop:h-screen tablet:h-[100vh] phone:h-[100vh] container-fit flex flex-col justify-center items-center inverted ">
         <p className="large-text w-full indent-[25%]">
           (⁕⁕&emsp;For each step I will record a Loom video just for you, and at
           the end of the development I will gift you Figma file with all the
