@@ -59,7 +59,7 @@ const NavBar = () => {
         </div>
 
         {/* For smaller devices */}
-        <div className="w-fit absolute left-1/2 spaced-links desktop:hidden tablet:hidden phone:flex">
+        <div className="w-fit absolute left-1/2 -translate-x-1/2 spaced-links desktop:hidden tablet:hidden phone:flex">
           <HoverAnimation>
             <SmallLogo />
           </HoverAnimation>
