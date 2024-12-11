@@ -21,6 +21,7 @@ const LargeInput = ({id, placeholder}) => {
         placeholder={placeholder}
         className="border-none outline-none w-full h-64 body-text"
         id={id}
+        name={id}
       />
       <div className="text-right body-text">
         {text.length}/{maxLength} characters

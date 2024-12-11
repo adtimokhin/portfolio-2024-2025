@@ -7,6 +7,7 @@ const SmallInput = ({placeholder, id, inputType}) => {
       <input
         type={inputType}
         id={id}
+        name={id}
         className="w-full focus:outline-none body-text"
         placeholder={placeholder}
         style={{ border: 'none' }}

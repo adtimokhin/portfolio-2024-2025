@@ -222,7 +222,10 @@ export default function Home() {
       </section>
 
       {/* Extras Section */}
-      <section className="w-full desktop:h-screen tablet:h-[100vh] phone:h-[100vh] container-fit flex flex-col justify-center items-center inverted large-text" id="paragraph__section">
+      <section
+        className="w-full desktop:h-screen tablet:h-[100vh] phone:h-[100vh] container-fit flex flex-col justify-center items-center inverted large-text"
+        id="paragraph__section"
+      >
         <Paragraph
           content={
             "(⁕⁕ For each step I will record a Loom video just for you, and at the end of the development I will gift you Figma file with all the work in it. ⁕⁕)"
@@ -238,7 +241,11 @@ export default function Home() {
         <SectionTitle side="Ä▄@ŋ¬" title="Contact Form" sup="[03]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="desktop:w-3/4 tablet:w-full phone:w-full h-fit">
-            <form className="w-full h-fit flex flex-col justify-center section__projects__row-gap__form-button">
+            <form
+              className="w-full h-fit flex flex-col justify-center section__projects__row-gap__form-button"
+              action="https://formspree.io/f/xovqzywa"
+              method="POST"
+            >
               <div className="w-full h-fit flex flex-col section__projects__row-gap__input-spacing">
                 <SmallInput
                   inputType={"text"}
@@ -251,7 +258,7 @@ export default function Home() {
                   placeholder={"Email"}
                 />
                 <LargeInput
-                  id={"description"}
+                  id={"message"}
                   placeholder={"Project Description (500 symbols max)"}
                 />
               </div>
