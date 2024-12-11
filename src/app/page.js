@@ -15,7 +15,6 @@ import ProjectCard from "@/components/ProjectCard";
 import SmallInput from "@/components/input/SmallInput";
 import LargeInput from "@/components/input/LargeInput";
 import Button from "@/components/input/Button";
-import DropDownSection from "@/components/drop-down/DropDownSection";
 
 // Scripts
 import HeroLetters from "@/components/animation/HeroLetters";
@@ -24,13 +23,14 @@ import DropDownCollection from "@/components/drop-down/DropDownCollection";
 import CanvasPluses from "@/components/canvas-based/CanvasPluses";
 import DynamicTextWrapper from "@/components/DynamicTextWrapper";
 import HoverAnimation from "@/components/animation/HoverAnimation";
+import Paragraph from "@/components/animation/text/Paragraph";
 
 export default function Home() {
   return (
     // Example how to include tailwind css class for a variable from layout file: font-[family-name:var(--font-montreal-medium)]
     <main className="flex flex-col row-gap__sections-y">
       {/* Hero section */}
-      <section className="w-full h-screen container-fit flex flex-col items-center desktop:justify-center tablet:justify-around phone:justify-between pt-[70px]">
+      <section className="w-full h-screen min-h-fit container-fit flex flex-col items-center desktop:justify-center tablet:justify-around phone:justify-between pt-[70px]">
         {/* TODO:Include approriate spaces between lines */}
         <HeroLetters />
         <div className="w-full flex flex-col hero-lines__row-gap desktop:flex-1">
@@ -222,12 +222,12 @@ export default function Home() {
       </section>
 
       {/* Extras Section */}
-      <section className="w-full desktop:h-screen tablet:h-[100vh] phone:h-[100vh] container-fit flex flex-col justify-center items-center inverted ">
-        <p className="large-text w-full indent-[25%]">
-          (⁕⁕&emsp;For each step I will record a Loom video just for you, and at
-          the end of the development I will gift you Figma file with all the
-          work in it.&emsp;⁕⁕)
-        </p>
+      <section className="w-full desktop:h-screen tablet:h-[100vh] phone:h-[100vh] container-fit flex flex-col justify-center items-center inverted large-text" id="paragraph__section">
+        <Paragraph
+          content={
+            "(⁕⁕ For each step I will record a Loom video just for you, and at the end of the development I will gift you Figma file with all the work in it. ⁕⁕)"
+          }
+        />
       </section>
 
       {/* Contact Section */}
