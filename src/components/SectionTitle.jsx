@@ -50,14 +50,14 @@ const SectionTitle = ({ side, title, sup }) => {
       <p id={`title-${title}__side-decor`}>
         <sub className="side-decoration">{side}</sub>
       </p>
-      <h3 className="w-fit section-title-text absolute left-1/2 -translate-x-1/2 overflow-hidden">
+      <h2 className="w-fit section-title-text absolute left-1/2 -translate-x-1/2 overflow-hidden">
       <HoverAnimation>
         <span id={`title-${sup}__main`} className="inline-block relative">
           {title}
           <sup>{sup}</sup>
         </span>
         </HoverAnimation>
-      </h3>
+      </h2>
     </div>
   );
 };
