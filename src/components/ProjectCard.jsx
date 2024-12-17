@@ -5,9 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import test from "@/app/images/Test.png";
 
-const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
+const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
   let span;
   let text;
   let card;
@@ -166,10 +165,12 @@ const ProjectCard = ({ imgDest, imgAlt, title, destination }) => {
           </p>
           <Image
             height={470}
-            src={test}
+            width={500}
+            src={`/images/${imgName}`}
             style={{ maxHeight: "100%", width: "100%" }}
             className="z-10"
             onLoadingComplete={animateImage}
+            alt={imgAlt}
           />
         </div>
         <p

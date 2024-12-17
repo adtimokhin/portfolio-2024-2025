@@ -168,14 +168,14 @@ export default function Home() {
           <div className="w-full flex desktop:flex-row tablet:flex-col phone:flex-col section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
               title={"PACIFICA"}
-              imgDest={"nowhere"}
-              imgAlt={"no matter"}
+              imgName={"Pacifica.png"}
+              imgAlt={"lines in gradient and a large title PACIFICA"}
               destination={"https://pacifica-kz-redesign.vercel.app/"}
             />
             <ProjectCard
               title={"Filipchik Studios"}
-              imgDest={"nowhere"}
-              imgAlt={"no matter"}
+              imgName={"Filipchik.png"}
+              imgAlt={"Large logo of FILIPCHIK STUDIOS in black and white"}
               destination={
                 "https://filipchik-studio-website-redesign.vercel.app/"
               }
@@ -184,8 +184,10 @@ export default function Home() {
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
               title={"Perestroyka Agency"}
-              imgDest={"nowhere"}
-              imgAlt={"no matter"}
+              imgName={"Perestroyka.png"}
+              imgAlt={
+                "A blured image of a kitchen interior and a large text: 'design studio'"
+              }
               destination={
                 "https://www.behance.net/gallery/194325431/Perestroyka-Agency-Website-Posters-Social-Media"
               }
@@ -194,14 +196,16 @@ export default function Home() {
           <div className="w-full flex desktop:flex-row tablet:flex-col phone:flex-col section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
               title={"Pierce Interiors"}
-              imgDest={"nowhere"}
-              imgAlt={"no matter"}
+              imgName={"Pierce.png"}
+              imgAlt={
+                "An image of a blue colored interior of a living room with a large text 'Pierce interiors' over"
+              }
               destination={"https://pierce-interior.vercel.app/"}
             />
             <ProjectCard
               title={"Harmony In Chaos"}
-              imgDest={"nowhere"}
-              imgAlt={"no matter"}
+              imgName={"Harmony.png"}
+              imgAlt={"a sculpture of a man contemplating"}
               destination={"https://harmony-in-chaos-website.vercel.app/"}
             />
           </div>
