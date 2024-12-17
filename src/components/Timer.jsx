@@ -11,7 +11,7 @@ const Timer = () => {
 
       // Get the time in Chicago, IL
       const chicagoTime = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Chicago", // Specify the Chicago timezone
+        timeZone: "Asia/Almaty", // Specify the Chicago timezone
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',

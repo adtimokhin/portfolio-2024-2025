@@ -137,7 +137,7 @@ export default function Home() {
         {/* Content */}
         <div className="w-full h-fit absolute top-1/2 left-0 -translate-y-1/2">
           <div className="w-full h-fit flex flex-col justify-center items-center section__time__row-gap__title-timer">
-            <h3 className="large-title-text">Currently I’m in: Chicago</h3>
+            <h3 className="large-title-text">Currently I’m in: Almaty</h3>
             <div className="w-full desktop:h-[420px] tablet:h-[220px] phone:h-[72px] relative">
               <div className="absolute top-0 left-0">
                 <Side />
@@ -241,6 +241,7 @@ export default function Home() {
         <SectionTitle side="Ä▄@ŋ¬" title="Contact Form" sup="[03]" />
         <div className="w-full h-fit flex flex-col justify-end items-end">
           <div className="desktop:w-3/4 tablet:w-full phone:w-full h-fit">
+            {/* FIXME: Add email checks */}
             <form
               className="w-full h-fit flex flex-col justify-center section__projects__row-gap__form-button"
               action="https://formspree.io/f/xovqzywa"
