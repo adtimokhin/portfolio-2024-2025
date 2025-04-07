@@ -38,7 +38,7 @@ const DropDownTitle = ({
       scrollTrigger: {
         trigger: gsapRef.current,
         start: "top 80%", // Start when top of element reaches 80% from top of viewport
-        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+        toggleActions: "play none none none", // Play on enter, reverse on leave
         markers: false, // Set to true for debugging
       }
     });
