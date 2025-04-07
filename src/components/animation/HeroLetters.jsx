@@ -43,8 +43,8 @@ const HeroLetters = () => {
         },
       });
 
-      tl.to(".icon-cover", {
-        backgroundColor: "transparent",
+      tl.from(".icon-cover", {
+        opacity: 0,
         ease: "power1.inOut",
         stagger: 0.05,
       });

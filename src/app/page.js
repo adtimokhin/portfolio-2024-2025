@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
           {/* ICON FOR SMALLER SCREENS */}
-          <div className="bg-text_light dark:bg-text_dark icon-cover desktop:hidden tablet:flex phone:flex flex-col justify-center items-center">
+          <div className="icon-cover desktop:hidden tablet:flex phone:flex flex-col justify-center items-center">
             <StartDate
               classes={
                 "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
@@ -101,7 +101,7 @@ export default function Home() {
 
         {/* Bottom info */}
         <div className="w-full desktop:flex-1 tablet:h-fit phone:h-fit flex desktop:flex-row tablet:flex-row phone:flex-col justify-between items-center gap-y-8">
-          <div className="bg-text_light dark:bg-text_dark icon-cover desktop:order-first tablet:order-last phone:order-last">
+          <div className=" icon-cover desktop:order-first tablet:order-last phone:order-last">
             <Random
               classes={
                 "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
@@ -116,7 +116,7 @@ export default function Home() {
                 }
               />
             </div>
-            <div className="bg-text_light dark:bg-text_dark icon-cover desktop:flex tablet:hidden phone:hidden">
+            <div className=" icon-cover desktop:flex tablet:hidden phone:hidden">
               <StartDate
                 classes={
                   "hover:bg-text_light dark:hover:bg-text_dark transition-colors ease-in-out duration-300"
