@@ -23,6 +23,7 @@ const SectionTitle = ({ side, title, sup }) => {
 
       const title = document.getElementById(`title-${sup}__main`);
       const container = document.getElementById(`title-${sup}__main-container`);
+      const line = container.getElementsByClassName("expand-line");
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -35,6 +36,17 @@ const SectionTitle = ({ side, title, sup }) => {
 
       tl.from(title, {
         y: "100%",
+        opacity:0.3
+      });
+
+      gsap.from(line, {
+        width: "0%",
+        scrollTrigger: {
+          trigger: container,
+          start: "bottom 80%",
+          duration: 1.2,
+          ease: "power4.inOut",
+        },
       });
     });
 
@@ -44,20 +56,23 @@ const SectionTitle = ({ side, title, sup }) => {
 
   return (
     <div
-      className="w-full border-b border-text_light dark:border-text_dark flex flex-row relative h-[30px] items-center"
+      className="w-full flex flex-col relative h-[30px] items-center"
       id={`title-${sup}__main-container`}
     >
-      <p id={`title-${title}__side-decor`}>
-        <sub className="side-decoration">{side}</sub>
-      </p>
-      <h2 className="w-fit section-title-text absolute left-1/2 -translate-x-1/2 overflow-hidden">
-      <HoverAnimation>
-        <span id={`title-${sup}__main`} className="inline-block relative">
-          {title}
-          <sup>{sup}</sup>
-        </span>
-        </HoverAnimation>
-      </h2>
+      <div className="w-full flex flex-row relative h-[30px] items-center">
+        <p id={`title-${title}__side-decor`}>
+          <sub className="side-decoration">{side}</sub>
+        </p>
+        <h2 className="w-fit section-title-text absolute left-1/2 -translate-x-1/2 overflow-hidden">
+          <HoverAnimation>
+            <span id={`title-${sup}__main`} className="inline-block relative">
+              {title}
+              <sup>{sup}</sup>
+            </span>
+          </HoverAnimation>
+        </h2>
+      </div>
+      <div className="w-full bg-text_light dark:text-text_dark h-[1px] expand-line" />
     </div>
   );
 };
