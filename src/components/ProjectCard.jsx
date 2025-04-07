@@ -27,19 +27,29 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
       // Select elements within the proper ref scope
       const card = gsapRef.current.querySelector(".card");
       const jumpText = containerRef.current.querySelector("span");
+      const maskOverlay = gsapRef.current.querySelector(".mask-overlay");
       
+      // Create a timeline for scroll-triggered animations
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: card,
-          start: "bottom 80%",
-          duration: 0.8,
-          ease: "power3.inOut",
+          start: "top 70%", // Start animation when the top of the card reaches 70% from the top of the viewport
+          end: "bottom 50%", // End animation when the bottom of the card reaches 50% from the top
+          toggleActions: "play none none none", 
+          markers: false, // Set to true for debugging
         },
       });
 
-      tl.from(jumpText, {
+      // Add animations to the timeline
+      tl.to(maskOverlay, {
+        x: "100%", 
+        duration: 0.8,
+        ease: "power3.inOut",
+      }).from(jumpText, {
         y: "100%",
-      });
+        duration: 0.5,
+        ease: "power2.out",
+      }, "-=0.3"); // Start this animation 0.3 seconds before the previous one ends
       
       // Return cleanup function
       return () => {
@@ -122,11 +132,12 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
   });
 
   const animateImage = contextSafe(() => {
-    gsap.from(containerRef.current.querySelector("img"), { 
-      opacity: 0, 
-      duration: 0.3, 
-      ease: "power1.inOut" 
-    });
+    // Instead of animating opacity directly, we'll just ensure the image is ready
+    // The reveal will be handled by the scroll trigger animation
+    const img = containerRef.current.querySelector("img");
+    if (img) {
+      img.style.opacity = "1";
+    }
   });
 
   const handleMouseMove = (e) => {
@@ -192,19 +203,24 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
         target="_blank"
         ref={containerRef}
       >
-        <div className="w-full h-[470px] inverted flex flex-col items-center justify-center relative">
+        <div className="w-full h-[470px] inverted flex flex-col items-center justify-center relative overflow-hidden">
           <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 body-text w-fit text-center">
             [IMG LOADING...]
           </p>
-          <Image
-            height={470}
-            width={500}
-            src={`/images/${imgName}`}
-            style={{ maxHeight: "100%", width: "100%" }}
-            className="z-10"
-            onLoadingComplete={animateImage}
-            alt={imgAlt}
-          />
+          {/* Image container with mask effect */}
+          <div className="image-container relative w-full h-full overflow-hidden">
+            <Image
+              height={470}
+              width={500}
+              src={`/images/${imgName}`}
+              style={{ maxHeight: "100%", width: "100%", opacity: 1 }}
+              className="z-10"
+              onLoadingComplete={animateImage}
+              alt={imgAlt}
+            />
+            {/* Mask overlay that will slide from left to right */}
+            <div className="mask-overlay absolute top-0 left-0 w-full h-full bg-background_light dark:bg-background_dark z-20"></div>
+          </div>
         </div>
         <p
           className="body-text overflow-hidden"
