@@ -167,18 +167,18 @@ export default function Home() {
         <div className="w-full h-fit flex flex-col section__projects__row-gap__line-spacing">
           <div className="w-full flex desktop:flex-row tablet:flex-col phone:flex-col section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
-              title={"PACIFICA"}
-              imgName={"Pacifica.png"}
-              imgAlt={"lines in gradient and a large title PACIFICA"}
-              destination={"https://pacifica-kz-redesign.vercel.app/"}
+              title={"Pierce Interiors"}
+              imgName={"Pierce.png"}
+              imgAlt={
+                "An image of a blue colored interior of a living room with a large text 'Pierce interiors' over"
+              }
+              destination={"https://pierce-interior.vercel.app/"}
             />
             <ProjectCard
-              title={"Filipchik Studios"}
-              imgName={"Filipchik.png"}
-              imgAlt={"Large logo of FILIPCHIK STUDIOS in black and white"}
-              destination={
-                "https://filipchik-studio-website-redesign.vercel.app/"
-              }
+              title={"Harmony In Chaos"}
+              imgName={"Harmony.png"}
+              imgAlt={"a sculpture of a man contemplating"}
+              destination={"https://harmony-in-chaos-website.vercel.app/"}
             />
           </div>
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
@@ -195,18 +195,18 @@ export default function Home() {
           </div>
           <div className="w-full flex desktop:flex-row tablet:flex-col phone:flex-col section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
             <ProjectCard
-              title={"Pierce Interiors"}
-              imgName={"Pierce.png"}
-              imgAlt={
-                "An image of a blue colored interior of a living room with a large text 'Pierce interiors' over"
-              }
-              destination={"https://pierce-interior.vercel.app/"}
+              title={"PACIFICA"}
+              imgName={"Pacifica.png"}
+              imgAlt={"lines in gradient and a large title PACIFICA"}
+              destination={"https://pacifica-kz-redesign.vercel.app/"}
             />
             <ProjectCard
-              title={"Harmony In Chaos"}
-              imgName={"Harmony.png"}
-              imgAlt={"a sculpture of a man contemplating"}
-              destination={"https://harmony-in-chaos-website.vercel.app/"}
+              title={"Filipchik Studios"}
+              imgName={"Filipchik.png"}
+              imgAlt={"Large logo of FILIPCHIK STUDIOS in black and white"}
+              destination={
+                "https://filipchik-studio-website-redesign.vercel.app/"
+              }
             />
           </div>
         </div>
