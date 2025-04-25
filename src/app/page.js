@@ -175,10 +175,10 @@ export default function Home() {
               destination={"https://pierce-interior.vercel.app/"}
             />
             <ProjectCard
-              title={"Harmony In Chaos"}
-              imgName={"Harmony.png"}
-              imgAlt={"a sculpture of a man contemplating"}
-              destination={"https://harmony-in-chaos-website.vercel.app/"}
+              title={"Dev Portfolio"}
+              imgName={"adtimokhin.jpg"}
+              imgAlt={"Large logo of FILIPCHIK STUDIOS in black and white"}
+              destination={"https://www.adtimokhin.me/"}
             />
           </div>
           <div className="w-full flex flex-row section__projects__col-gap__card-gap section__projects__row-gap__line-spacing justify-center">
@@ -201,12 +201,10 @@ export default function Home() {
               destination={"https://pacifica-kz-redesign.vercel.app/"}
             />
             <ProjectCard
-              title={"Filipchik Studios"}
-              imgName={"Filipchik.png"}
-              imgAlt={"Large logo of FILIPCHIK STUDIOS in black and white"}
-              destination={
-                "https://filipchik-studio-website-redesign.vercel.app/"
-              }
+              title={"Harmony In Chaos"}
+              imgName={"Harmony.png"}
+              imgAlt={"a sculpture of a man contemplating"}
+              destination={"https://harmony-in-chaos-website.vercel.app/"}
             />
           </div>
         </div>
