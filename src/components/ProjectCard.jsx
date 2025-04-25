@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
   // Use refs instead of let variables for better React practices
@@ -12,6 +12,12 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
   const textRef = useRef(null);
   const spanRef = useRef(null);
   const cardRef = useRef(null);
+
+  // Add refs for tracking mouse movement
+  const mousePositionRef = useRef({ x: 0, y: 0 });
+  const lastMousePositionRef = useRef({ x: 0, y: 0 });
+  const mouseVelocityRef = useRef({ x: 0, y: 0 });
+  const lastUpdateTimeRef = useRef(0);
 
   const cursorWidth = 10;
   const cursorHeight = 10;
@@ -67,6 +73,57 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
     return cursors; 
   }
 
+  // Function to calculate mouse velocity
+  const updateMouseVelocity = (event) => {
+    const currentTime = Date.now();
+    const deltaTime = currentTime - lastUpdateTimeRef.current;
+    
+    if (deltaTime > 0) {  // Avoid division by zero
+      // Update current mouse position
+      mousePositionRef.current = { 
+        x: event.clientX, 
+        y: event.clientY 
+      };
+      
+      // Calculate velocity (pixels per millisecond)
+      mouseVelocityRef.current = {
+        x: (mousePositionRef.current.x - lastMousePositionRef.current.x) / deltaTime,
+        y: (mousePositionRef.current.y - lastMousePositionRef.current.y) / deltaTime
+      };
+      
+      // Store current position and time for next calculation
+      lastMousePositionRef.current = { ...mousePositionRef.current };
+      lastUpdateTimeRef.current = currentTime;
+      
+      // Apply the skew based on velocity if the text element exists
+      applySkewToText();
+    }
+  };
+
+  // Function to apply skew based on velocity
+  const applySkewToText = contextSafe(() => {
+    if (textRef.current) {
+      // Calculate skew amount based on velocity
+      // Multiply by a factor to make the effect more noticeable
+      // Using the X velocity for horizontal movement
+      const skewFactor = 30; // Adjust this value to control the intensity of the skew
+      const maxSkew = 15; // Maximum skew in degrees
+      
+      // Calculate skew based on X velocity (horizontal mouse movement)
+      let skewAmount = mouseVelocityRef.current.x * skewFactor;
+      
+      // Limit the skew to a reasonable range
+      skewAmount = -1 * Math.max(Math.min(skewAmount, maxSkew), -maxSkew);
+      
+      // Apply the skew transform
+      gsap.to(textRef.current, {
+        skewX: skewAmount,
+        duration: 0.4, // Quick transition for responsive feel
+        ease: "power2.out"
+      });
+    }
+  });
+
   const addCursor = contextSafe((container, event) => {
     console.log("Adding cursor");
 
@@ -95,6 +152,14 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
     text.style.mixBlendMode = "exclusion";
     text.classList.add("large-text");
     text.textContent = "OPEN ↗";
+    
+    // Initialize mouse position tracking
+    lastMousePositionRef.current = { 
+      x: event.clientX, 
+      y: event.clientY 
+    };
+    mousePositionRef.current = { ...lastMousePositionRef.current };
+    lastUpdateTimeRef.current = Date.now();
 
     cursor.appendChild(text);
     container.appendChild(cursor);
@@ -121,6 +186,7 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
     if (textRef.current && cursorRef.current) {
       gsap.to(textRef.current, {
         color: "black",
+        skewX: 0, // Reset skew when removing
         onComplete: () => {
           if (cursorRef.current) {
             cursorRef.current.remove();
@@ -144,6 +210,9 @@ const ProjectCard = ({ imgName, imgAlt, title, destination }) => {
     const x = e.clientY - cursorHeight + window.scrollY;
     const y = e.clientX - cursorWidth;
     moveCursor(x, y);
+    
+    // Update velocity on mouse move
+    updateMouseVelocity(e);
   };
 
   useEffect(() => {
