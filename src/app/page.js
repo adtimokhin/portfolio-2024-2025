@@ -87,13 +87,14 @@ export default function Home() {
           </div>
           <div className="w-full">
             <h1 className="absurdly-large-text w-full text-right overflow-hidden">
-              <span className="animatable-span hero-letter">S</span>
-              <span className="animatable-span hero-letter">T</span>
-              <span className="animatable-span hero-letter">A</span>
-              <span className="animatable-span hero-letter">R</span>
-              <span className="animatable-span hero-letter">T</span>
-              <span className="animatable-span hero-letter">U</span>
+              <span className="animatable-span hero-letter">C</span>
+              <span className="animatable-span hero-letter">O</span>
+              <span className="animatable-span hero-letter">M</span>
               <span className="animatable-span hero-letter">P</span>
+              <span className="animatable-span hero-letter">A</span>
+              <span className="animatable-span hero-letter">N</span>
+              <span className="animatable-span hero-letter">I</span>
+              <span className="animatable-span hero-letter">E</span>
               <span className="animatable-span hero-letter">S</span>
             </h1>
           </div>
